@@ -1,0 +1,22 @@
+
+docker build -t zhuxian3:v1 .
+
+docker run --name zhuxian -itd -p 80:80 -p 3306:3306 -p 29000:29000 -p 29100:29100 -p 29200:29200 -p 29300:29300 -p 29400:29400 -p 29401:29401 -p 29700:29700 -p 29702:29702 -p 29712:29712 zhuxian3:v1
+
+docker exec -it zhuxian bash
+
+
+
+
+
+
+
+
+
+
+docker container stop zhuxian
+
+
+docker rm $(docker ps -qa --no-trunc --filter "status=exited")
+docker rm $(docker ps -qa --no-trunc --filter "status=created")
+
